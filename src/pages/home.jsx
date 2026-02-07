@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { getProductById, getProducts } from "../data/products.js";
 import ProductCard from "../components/productCard.jsx";
+/**
+ * Render the Home page with a hero section and a grid of product cards.
+ *
+ * @returns {JSX.Element} The Home page element containing a welcome hero and a product grid.
+ */
 export default function Home() {
   const products = getProducts();
   return (

@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Render the top navigation bar with brand, primary navigation links, and authentication buttons.
+ *
+ * @returns {JSX.Element} The navigation bar element containing brand, Home and Cart links, and Login/Signup controls.
+ */
 export default function Navbar() {
   return (
     <nav className="navbar">

@@ -73,10 +73,21 @@ const products = [
   },
 ];
 
+/**
+ * Retrieve the full list of available product objects.
+ * @returns {Array<Object>} The array of product objects, each with `id`, `name`, `price`, `image`, and `description`.
+ */
 export function getProducts() {
   return products;
 }
 
+/**
+ * Retrieve the product with the specified id.
+ *
+ * The input `id` is coerced to a Number before comparison.
+ * @param {string|number} id - Product identifier (may be a number or numeric string).
+ * @returns {{id:number,name:string,price:number,image:string,description:string}|undefined} The matching product object, or `undefined` if no product has the given id.
+ */
 export function getProductById(id) {
   return products.find((p) => p.id === Number(id));
 }

@@ -5,6 +5,11 @@ import Auth from "./pages/auth";
 import Checkout from "./pages/checkout";
 import Navbar from "./components/Navbar";
 
+/**
+ * Root application component that renders the navigation bar and client-side routes.
+ *
+ * @returns {JSX.Element} The root JSX element containing the Navbar and Routes for "/", "/auth", and "/checkout".
+ */
 function App() {
   return (
     <div className="app">
