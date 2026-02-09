@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import {AuthContext} from "../context/authContext";
+import {AuthContext, useAuth} from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Auth() {
@@ -13,7 +13,7 @@ export default function Auth() {
     formState: { errors },
   } = useForm();
   
-  const {signUp,user,logout,login}=useContext(AuthContext)
+  const {signUp,login}=useAuth();
   
   
   function onSubmit(data) {
@@ -31,22 +31,20 @@ export default function Auth() {
     else{
       setError(result.error)
     }
-    console.log(result);
   }
   return (
     <div className="page">
       <div className="container">
-        <div className="auth=container">
+        <div className="auth-container">
           <h1 className="page-title">
             {mode === "signup" ? "Sign Up" : "Login"}
           </h1>
-          {user&&<p>User logged in : {user.email}</p>}
-          <button onClick={()=>logout()}>Logout</button>
+      
           <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
             {error&&<div className="error-message">{error}</div>}
 
             <div className="form-group">
-              <label className="form-lable" htmlFor="email">
+              <label className="form-label" htmlFor="email">
                 Email
               </label>
               <input
@@ -60,7 +58,7 @@ export default function Auth() {
               )}
             </div>
             <div className="form-group">
-              <label className="form-lable" htmlFor="password">
+              <label className="form-label" htmlFor="password">
                 Password
               </label>
               <input
@@ -108,3 +106,5 @@ export default function Auth() {
     </div>
   );
 }
+
+
