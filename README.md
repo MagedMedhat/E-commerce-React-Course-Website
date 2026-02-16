@@ -62,8 +62,6 @@ Follow these steps to install and run the project locally:
 
 ---
 
----
-
 ## License
 
 This repository is open-source and available under the MIT License. See [LICENSE](./LICENSE) for more details.
